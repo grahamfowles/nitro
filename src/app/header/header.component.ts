@@ -1,4 +1,9 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  Input,
+  OnInit,
+} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PostService } from '../services/post.service';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
@@ -13,6 +18,8 @@ import { GroupingType } from '../models/grouping-type.model';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HeaderComponent implements OnInit {
+  @Input() showGroupSelector = false;
+
   formGroup = new FormGroup<{ groupBy: FormControl<GroupingType | null> }>({
     groupBy: new FormControl<GroupingType>(GroupingType.Time),
   });

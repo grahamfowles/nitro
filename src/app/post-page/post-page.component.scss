@@ -5,6 +5,14 @@
   flex-direction: column;
   gap: 2rem;
 
+  &__back-button {
+    color: var(--color-text-secondary);
+
+    &:hover {
+      color: var(--color-text-hover);
+    }
+  }
+
   &__form {
     width: 100%;
 
@@ -17,12 +25,28 @@
     &__label {
       font-weight: 600;
       display: block;
-      margin-block-start: 1rem;
+      margin-block-start: 2rem;
+      margin-block-end: 0.2rem;
+      margin-inline-start: 0.5rem;
+    }
+
+    &__location {
+      border-radius: 1rem;
+      padding: 0.6rem;
+      border: 1px solid var(--color-text-secondary);
+      background-color: var(--color-bg);
+      color: var(--color-text);
     }
 
     &__text {
       width: 100%;
       height: 200px;
+      box-sizing: border-box;
+      border-radius: 1rem;
+      border: 1px solid var(--color-text-secondary);
+      background-color: var(--color-bg);
+      color: var(--color-text);
+      padding: 1rem;
     }
   }
 }

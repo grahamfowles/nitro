@@ -1,4 +1,5 @@
-<div class="post">
+<app-header></app-header>
+<div class="post container">
   <a routerLink="" class="post__back-button">Back to list</a>
 
   <form [formGroup]="formGroup" class="post__form">
@@ -6,7 +7,12 @@
     <div class="post__form__meta">By: {{ post.author }}</div>
     <div>
       <label class="post__form__label" for="location">Location:</label>
-      <input type="text" formControlName="location" id="location" />
+      <input
+        class="post__form__location"
+        type="text"
+        formControlName="location"
+        id="location"
+      />
     </div>
     <div>
       <label class="post__form__label" for="text">Text</label>

@@ -1,13 +1,15 @@
 <header>
   <nav>
-    <form [formGroup]="formGroup">
-      <label for="groupBy">Group By: </label>
-      <select id="groupBy" formControlName="groupBy">
-        <option value="time">Date</option>
-        <option value="author">Author</option>
-        <option value="location">Location</option>
-      </select>
-    </form>
+    <div>
+      <form [formGroup]="formGroup" *ngIf="showGroupSelector" class="container">
+        <label for="groupBy">Group By: </label>
+        <select id="groupBy" formControlName="groupBy">
+          <option value="time">Date</option>
+          <option value="author">Author</option>
+          <option value="location">Location</option>
+        </select>
+      </form>
+    </div>
 
     <button (click)="toggleDarkMode()">Dark Mode</button>
   </nav>

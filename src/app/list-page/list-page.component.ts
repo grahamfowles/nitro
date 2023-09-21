@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PostService } from '../services/post.service';
 import { TreeviewComponent } from '../treeview/treeview.component';
+import { HeaderComponent } from '../header/header.component';
 
 @Component({
   selector: 'app-list-page',
   standalone: true,
-  imports: [CommonModule, TreeviewComponent],
+  imports: [CommonModule, TreeviewComponent, HeaderComponent],
   templateUrl: './list-page.component.html',
   styleUrls: ['./list-page.component.scss'],
 })

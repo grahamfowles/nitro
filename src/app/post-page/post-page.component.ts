@@ -4,13 +4,20 @@ import { PostService } from '../services/post.service';
 import { Post } from '../models/post.model';
 import { DatePipe } from '@angular/common';
 import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HeaderComponent } from '../header/header.component';
 
 @Component({
   selector: 'app-post-page',
   templateUrl: './post-page.component.html',
   styleUrls: ['./post-page.component.scss'],
   standalone: true,
-  imports: [RouterLink, DatePipe, FormsModule, ReactiveFormsModule],
+  imports: [
+    RouterLink,
+    DatePipe,
+    FormsModule,
+    ReactiveFormsModule,
+    HeaderComponent,
+  ],
 })
 export class PostPageComponent {
   post: Post = this.postService.getPostById(
