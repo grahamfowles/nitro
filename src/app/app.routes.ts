@@ -15,4 +15,8 @@ export const routes: Routes = [
         (routes) => routes.postPageRoutes
       ),
   },
+  {
+    path: '**',
+    redirectTo: '',
+  },
 ];
