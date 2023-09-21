@@ -7,7 +7,6 @@ import {
   Output,
 } from '@angular/core';
 import { CommonModule, JsonPipe } from '@angular/common';
-import { PostService } from '../services/post.service';
 import { GroupedPosts } from '../models/grouped-posts.model';
 import { GroupingType } from '../models/grouping-type.model';
 import { RouterLink } from '@angular/router';

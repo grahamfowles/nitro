@@ -16,11 +16,7 @@ describe('ListPageComponent', () => {
           provide: PostService,
           useValue: {
             groupBy: jasmine.createSpy(),
-            groupedPosts: jasmine.createSpy().and.returnValue([
-              {
-                name: 'group1',
-              },
-            ]),
+            groupedPosts: jasmine.createSpy().and.returnValue([]),
             toggleGroupExpanded: jasmine.createSpy(),
           },
         },
@@ -33,9 +29,7 @@ describe('ListPageComponent', () => {
   });
 
   it('should toggle group expanded', () => {
-    const groupButtonEl = fixture.nativeElement.querySelector('button');
-
-    groupButtonEl.click();
+    component.onGroupToggled('group1');
 
     expect(service.toggleGroupExpanded).toHaveBeenCalledWith('group1');
   });

@@ -36,4 +36,16 @@ describe('HeaderComponent', () => {
 
     expect(service.groupBy.set).toHaveBeenCalledWith(GroupingType.Author);
   });
+
+  it('should toggle dark mode', () => {
+    const body = globalThis.document.querySelector('body');
+
+    component.toggleDarkMode();
+
+    expect(body?.className).toEqual('darkmode');
+
+    component.toggleDarkMode();
+
+    expect(body?.className).toEqual('');
+  });
 });
