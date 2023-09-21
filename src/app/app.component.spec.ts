@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { AppComponent } from './app.component';
 import { provideRouter } from '@angular/router';
+
+import { AppComponent } from './app.component';
 import { PostService } from './services/post.service';
 import { GroupingType } from './models/grouping-type.model';
 

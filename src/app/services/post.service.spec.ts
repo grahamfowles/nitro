@@ -1,12 +1,13 @@
 import { TestBed } from '@angular/core/testing';
+import { HttpClient } from '@angular/common/http';
+
+import { of } from 'rxjs';
+import { add, getUnixTime, sub } from 'date-fns';
 
 import { PostService } from './post.service';
-import { HttpClient } from '@angular/common/http';
-import { of } from 'rxjs';
-import { environment } from 'src/environments/environment';
 import { Post } from '../models/post.model';
-import { add, getUnixTime, sub } from 'date-fns';
 import { GroupingType } from '../models/grouping-type.model';
+import { environment } from 'src/environments/environment';
 
 const posts: Post[] = [
   {

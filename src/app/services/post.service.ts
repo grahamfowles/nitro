@@ -7,11 +7,12 @@ import {
   signal,
 } from '@angular/core';
 
-import { environment } from 'src/environments/environment';
+import { differenceInCalendarWeeks, fromUnixTime, getUnixTime } from 'date-fns';
+
 import { Post } from '../models/post.model';
 import { GroupingType } from '../models/grouping-type.model';
 import { GroupedPosts } from '../models/grouped-posts.model';
-import { differenceInCalendarWeeks, fromUnixTime, getUnixTime } from 'date-fns';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root',

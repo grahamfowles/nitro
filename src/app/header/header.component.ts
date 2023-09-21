@@ -5,8 +5,9 @@ import {
   OnInit,
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { PostService } from '../services/post.service';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+
+import { PostService } from '../services/post.service';
 import { GroupingType } from '../models/grouping-type.model';
 
 @Component({

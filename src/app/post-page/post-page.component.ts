@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
-import { PostService } from '../services/post.service';
-import { Post } from '../models/post.model';
 import { DatePipe } from '@angular/common';
 import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+import { PostService } from '../services/post.service';
+import { Post } from '../models/post.model';
 import { HeaderComponent } from '../header/header.component';
 
 @Component({
