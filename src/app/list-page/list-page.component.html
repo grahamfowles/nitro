@@ -1,0 +1,10 @@
+<div class="listpage">
+  <h1 class="listpage__header">{{ header }}</h1>
+
+  <app-treeview
+    [groupedPosts]="groupedPosts()"
+    [groupedBy]="groupedBy()"
+    [label]="header"
+    (groupToggled)="onGroupToggled($event)"
+  ></app-treeview>
+</div>

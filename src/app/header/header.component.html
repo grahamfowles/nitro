@@ -1,0 +1,14 @@
+<header>
+  <nav>
+    <form [formGroup]="formGroup">
+      <label for="groupBy">Group By: </label>
+      <select id="groupBy" formControlName="groupBy">
+        <option value="time">Date</option>
+        <option value="author">Author</option>
+        <option value="location">Location</option>
+      </select>
+    </form>
+
+    <button (click)="toggleDarkMode()">Dark Mode</button>
+  </nav>
+</header>

@@ -1,0 +1,13 @@
+header {
+  max-width: 64rem;
+  margin: auto;
+
+  label {
+    font-weight: 600;
+  }
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+  }
+}

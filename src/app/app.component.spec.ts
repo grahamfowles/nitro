@@ -1,29 +1,39 @@
-import { TestBed } from '@angular/core/testing';
-import { RouterTestingModule } from '@angular/router/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { provideRouter } from '@angular/router';
+import { PostService } from './services/post.service';
+import { GroupingType } from './models/grouping-type.model';
 
 describe('AppComponent', () => {
-  beforeEach(() => TestBed.configureTestingModule({
-    imports: [RouterTestingModule],
-    declarations: [AppComponent]
-  }));
+  let fixture: ComponentFixture<AppComponent>;
+  let app: AppComponent;
+  let service: PostService;
 
-  it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app).toBeTruthy();
+  beforeEach(() => {
+    TestBed.configureTestingModule({
+      imports: [AppComponent],
+      providers: [
+        provideRouter([]),
+        {
+          provide: PostService,
+          useValue: {
+            loadPosts: jasmine.createSpy(),
+            groupBy: {
+              set: jasmine.createSpy(),
+            },
+          },
+        },
+      ],
+    });
+
+    fixture = TestBed.createComponent(AppComponent);
+    app = fixture.componentInstance;
+    service = TestBed.inject(PostService);
   });
 
-  it(`should have as title 'nitro'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('nitro');
-  });
+  it('should set group by', () => {
+    app.setGroupBy(GroupingType.Author);
 
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('nitro app is running!');
+    expect(service.groupBy.set).toHaveBeenCalledWith(GroupingType.Author);
   });
 });

@@ -1,0 +1,18 @@
+@mixin button {
+  padding-block: 0.5rem;
+  border: 0;
+  text-align: start;
+  color: var(--color-text);
+  background-color: transparent;
+  cursor: pointer;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  word-break: break-all;
+
+  &:hover,
+  &:focus-visible {
+    background-color: var(--color-bg-hover);
+    color: var(--color-text-hover);
+  }
+}

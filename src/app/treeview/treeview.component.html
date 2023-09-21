@@ -1,0 +1,52 @@
+<ul class="treeview" role="tree" [attr.aria-label]="label">
+  <li
+    [ngClass]="{
+      treeview__group: true,
+      'treeview__group--expanded': group.expanded
+    }"
+    *ngFor="
+      let group of groupedPosts;
+      trackBy: trackByGroupName;
+      let index = index
+    "
+    role="treeitem"
+    aria-level="1"
+    [attr.aria-setsize]="groupedPosts.length"
+    [attr.aria-posinset]="index + 1"
+    [attr.aria-expaned]="group.expanded"
+    [attr.aria-selected]="false"
+  >
+    <button
+      class="treeview__group__button"
+      (click)="toggleGroup(group.name)"
+      [attr.data-id]="group.name"
+    >
+      <span class="treeview__group__button__icon">{{
+        group.expanded ? "-" : "+"
+      }}</span>
+      {{ group.name }}
+    </button>
+    <ul class="treeview__group__list" role="group" *ngIf="group.expanded">
+      <li
+        class="treeview__group__list__item"
+        *ngFor="
+          let post of group.posts;
+          trackBy: trackByPostId;
+          let postIndex = index
+        "
+        role="treeitem"
+        aria-level="2"
+        [attr.aria-setsize]="group.posts.length"
+        [attr.aria-posinset]="postIndex + 1"
+        [attr.aria-selected]="false"
+      >
+        <button
+          class="treeview__group__list__item__button"
+          [routerLink]="['post', post.id]"
+        >
+          {{ post.text }}
+        </button>
+      </li>
+    </ul>
+  </li>
+</ul>
